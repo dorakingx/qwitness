@@ -1,0 +1,11 @@
+import { randomBytes } from 'node:crypto';
+import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
+import { ml_dsa65 } from '@noble/post-quantum/ml-dsa.js';
+import { base64, fingerprint } from '../src/core/receipt';
+mkdirSync('.secrets', { recursive:true, mode:0o700 });
+if (existsSync('.secrets/signing.env')) throw new Error('A signer already exists; refusing to overwrite it.');
+const seed = randomBytes(32);
+const keys = ml_dsa65.keygen(seed);
+writeFileSync('.secrets/signing.env', `QWITNESS_SIGNING_SEED=${base64(seed)}\n`, {mode:0o600,flag:'wx'});
+writeFileSync('public/signer.json', JSON.stringify({algorithm:'ML-DSA-65',fingerprint:fingerprint(keys.publicKey),publicKey:base64(keys.publicKey),note:'Obtain this pin through an independent trusted channel before importing a receipt.'},null,2)+'\n');
+console.log('Signer saved in .secrets/signing.env (mode 0600). Public pin saved in public/signer.json. Secret was not printed.');

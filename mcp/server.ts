@@ -1,0 +1,11 @@
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { z } from 'zod';
+import { createMarketReceipt, getCapabilities } from '../src/core/service';
+import { MAX_RECEIPT_BYTES, verifyReceipt } from '../src/core/receipt';
+const server=new McpServer({name:'qwitness',version:'0.1.0'});
+const result=(data:unknown)=>({content:[{type:'text' as const,text:JSON.stringify(data)}]});
+server.registerTool('get_capabilities',{description:'Read supported markets, schema, signature algorithm and bounded provider configuration.',inputSchema:{},annotations:{readOnlyHint:true}},async()=>result(getCapabilities()));
+server.registerTool('create_market_receipt',{description:'Fetch the allowed live Aave markets from The Graph, analyze and sign an ML-DSA-65 receipt. No arbitrary evidence or URLs accepted.',inputSchema:{question:z.string().max(300).optional()},annotations:{readOnlyHint:true,openWorldHint:true}},async({question})=>{try{return result(await createMarketReceipt(question));}catch(error){console.error('QWitness issuance failed; details returned as a tool error.');return {...result({error:error instanceof Error?error.message:'Issuance failed'}),isError:true};}});
+server.registerTool('verify_receipt',{description:'Verify receipt integrity offline and compare against a fingerprint independently pinned by the caller. An embedded public key is not a trust anchor.',inputSchema:{receipt:z.string().max(MAX_RECEIPT_BYTES),trustedFingerprint:z.string().regex(/^sha384:[0-9a-f]{96}$/).optional()},annotations:{readOnlyHint:true,openWorldHint:false}},async({receipt,trustedFingerprint})=>result(verifyReceipt(receipt,trustedFingerprint)));
+await server.connect(new StdioServerTransport());

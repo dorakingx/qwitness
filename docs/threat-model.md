@@ -1,0 +1,19 @@
+# Security and trust model
+
+This receipt verifies the signed content against a specified public key. It does not prove that the data provider is honest, that the AI analysis is correct, or that Ethereum itself is quantum-resistant.
+
+The protected header and complete payload are canonicalized using the canonicalize package (RFC 8785 JSON Canonicalization Scheme). The ML-DSA context is QWitness/receipt/v1. The header contains schema version, domain, algorithm and SHA-384 signer fingerprint. The signature envelope contains the detached signature and public key; changing the key requires matching the signed fingerprint and signature. The full canonical bytes, rather than a custom digest-only variant, are passed to ML-DSA-65.
+
+Amounts remain decimal strings. Unsafe integers, malformed Unicode, unsupported headers, extra unsigned envelope fields, invalid base64, nesting beyond 24 and inputs above 256 KiB are rejected. JSON number lexical forms with the same RFC 8785 meaning canonicalize identically. Unicode normalization is not applied. Whitespace and key-order changes are not content changes. Raw JSON duplicate member names are interpreted by JSON.parse with last-member semantics; exchange receipts in canonical JSON and avoid duplicate keys. This prototype does not claim cross-parser ambiguity protection.
+
+Integrity and signer trust are separate. A supplied receipt key is not an identity credential. Verification without an independently supplied SHA-384 fingerprint returns unknown. A differently signed receipt can have valid integrity and a signer mismatch. The Web interface can obtain the site pin over HTTPS; this trusts the site, TLS and initial distribution. High-assurance use requires a separately authenticated pin. A downloaded verifier must itself come from a trusted channel.
+
+The signer seed uses the operating system CSPRNG and is stored in an ignored mode-0600 file locally or as a server-only deployment secret. Key rotation requires deliberate new key distribution; old pins do not silently update. Compromised keys and hostile hosting can produce valid false receipts. No hardware key protection, revocation service or hardened constant-time backend is implemented.
+
+The official ML-DSA standard is NIST FIPS 204. QWitness is not certified, independently audited, or approved by NIST. The pinned noble implementation reports no independent audit. JavaScript execution does not provide a constant-time guarantee. No quantum computer, ECDSA break, quantum-resistant Ethereum account, or protection of funds is demonstrated.
+
+The Graph adapter only queries one fixed provider, pool and pair of assets. It checks chain configuration, metadata consistency, reserve identities, token decimals and a bounded response. Indexer honesty, continuous interest accrual, chain reorganization and current chain truth are not independently proven. observedAt is the server's fetch time; block timestamp and reserve update time expose other sources of age. issuedAt is a signer assertion, not trusted timestamping or proof of historical existence.
+
+LLM text is untrusted output. No tools are available to the model; response schema, sizes, evidence references and numeric claims are validated. All arithmetic is performed by code. This does not prove qualitative statements correct. Invalid LLM output fails issuance; missing LLM credentials select an explicitly labeled deterministic mode.
+
+Issuance is bounded to one question, two markets, at most three Graph requests per run, 12-second Graph deadline, 15-second LLM deadline, 700 completion tokens and a 60-second shared process cache. At most 12 executions per hour are accepted per process. Process-local budgets reset with new instances and are NOT a global spending cap. Configure provider-side quotas with paid overages disabled before enabling public issuance. No paid subscription or balance was purchased by this project.

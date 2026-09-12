@@ -13,3 +13,5 @@ video/input/
 *.wav
 *.webm
 .DS_Store
+
+*.tsbuildinfo

@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-09-12T23:47:45.573Z",
+  "client": "@modelcontextprotocol/sdk stdio Client",
+  "records": [
+    {
+      "method": "tools/list",
+      "result": {
+        "tools": [
+          {
+            "name": "get_capabilities",
+            "description": "Read supported markets, schema, signature algorithm and bounded provider configuration.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "annotations": {
+              "readOnlyHint": true
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          },
+          {
+            "name": "create_market_receipt",
+            "description": "Fetch the allowed live Aave markets from The Graph, analyze and sign an ML-DSA-65 receipt. No arbitrary evidence or URLs accepted.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "question": {
+                  "type": "string",
+                  "maxLength": 300
+                }
+              },
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": true
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          },
+          {
+            "name": "verify_receipt",
+            "description": "Verify receipt integrity offline and compare against a fingerprint independently pinned by the caller. An embedded public key is not a trust anchor.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "receipt": {
+                  "type": "string",
+                  "maxLength": 262144
+                },
+                "trustedFingerprint": {
+                  "type": "string",
+                  "pattern": "^sha384:[0-9a-f]{96}$"
+                }
+              },
+              "required": [
+                "receipt"
+              ],
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "annotations": {
+              "readOnlyHint": true,
+              "openWorldHint": false
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_capabilities",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"name\":\"QWitness\",\"schemaVersion\":\"1\",\"algorithm\":\"ML-DSA-65\",\"ready\":false,\"graphConfigured\":false,\"signingConfigured\":true,\"analysisMode\":\"deterministic\",\"fingerprint\":\"sha384:c75969a5fc62cf74b09d53485058992d6a90add25796aa3c353f70b8b83ad09656ff59061b6b28d755ae2e5bdeabea8e\",\"markets\":[\"USDC\",\"DAI\"],\"question\":\"Compare two lending markets using live onchain data. Which has higher utilization, and what should an analyst monitor next?\",\"limits\":{\"markets\":2,\"graphRequestsPerReceipt\":3,\"graphTimeoutSeconds\":12,\"llmTimeoutSeconds\":15,\"llmOutputTokens\":700,\"cacheSeconds\":60,\"executionsPerHourPerInstance\":12,\"receiptBytes\":262144},\"securityStatement\":\"This receipt verifies the signed content against a specified public key. It does not prove that the data provider is honest, that the AI analysis is correct, or that Ethereum itself is quantum-resistant.\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "verify_receipt",
+      "inputKind": "explicit test-only receipt",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"integrity\":\"valid\",\"signerTrust\":\"matches pinned key\",\"freshness\":\"fresh\",\"observedAt\":\"2026-09-12T23:47:45.538Z\",\"fingerprint\":\"sha384:e247c5790a2e5691699b9d6351895782b5c97b5ee2adf8c40351546e80576f6084bf6a1dec70ece4f77d8940ec92e18b\",\"reason\":\"Signature valid; signer matches the independently supplied pin.\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_market_receipt",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"Live receipt unavailable: configure the Graph API key and stable signing key on the server.\"}"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ]
+}
