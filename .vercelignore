@@ -1,0 +1,8 @@
+.secrets
+.env.local
+work
+video
+submission
+.git
+test-results
+playwright-report
