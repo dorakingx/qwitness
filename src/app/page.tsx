@@ -176,7 +176,7 @@ export function QWitness({ defaultView = 'explore' }: { defaultView?: View }) {
 
       {view === 'explore' && <section className="receipt-preview"><div className="receipt-preview-title"><span className="receipt-icon"><Shield size={25} /></span><div><h3>Your research, with a receipt.</h3><p>Source evidence and analysis, bound by an ML-DSA-65 signature.</p></div></div>{receipt ? <button className="text-button" onClick={showReceipt}>View receipt <Arrow /></button> : <span className="receipt-preview-empty">Generated after your first query</span>}</section>}
       <section className="trust-boundary" id="trust-boundary"><span className="micro">WHAT THE SIGNATURE MEANS</span><p>{SECURITY_STATEMENT}</p><details><summary>Research prototype · security limitations</summary><p>Post-quantum protection applies to this receipt signature. It does not upgrade Ethereum accounts, consensus, API transport, or funds. Signed misinformation is still possible. Issuance and observation times are signer claims, not trusted timestamps. Key distribution, protection, and rotation remain separate trust problems. This hackathon prototype has not been independently audited.</p></details></section>
-    </main><footer className="site-footer"><span>QWitness <span className="footer-dot">·</span> Built by Doraking</span><span>The Graph <span>×</span> ML-DSA-65</span><span>ETHOnline 2026 <span className="footer-arrow">↗</span></span></footer>
+    </main><footer className="site-footer"><span>QWitness <span className="footer-dot">·</span> Built by Doraking</span><span>The Graph <span>×</span> ML-DSA-65</span><a href="https://github.com/dorakingx/qwitness" target="_blank" rel="noreferrer">Source on GitHub <span className="footer-arrow">↗</span></a></footer>
   </div>;
 }
 

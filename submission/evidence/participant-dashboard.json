@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-13T00:05:25.904698Z",
+  "method": "Authenticated browser accessibility observations; no final submit",
+  "dashboardUrl": "https://ethglobal.com/events/ethonline2026/home",
+  "projectUrl": "https://ethglobal.com/events/ethonline2026/project",
+  "attendance": "You are fully confirmed to attend this event!",
+  "selectedTrack": "Building from Scratch",
+  "projectDraftCreated": true,
+  "projectName": "QWitness",
+  "category": "Developer Tool",
+  "submitted": false,
+  "detailsSaved": false,
+  "detailsSaveBlocker": "ETHGlobal GitHub installation does not list newly created qwitness repository. Permission review requires participant GitHub sudo-mode 2FA/passkey authentication.",
+  "observedFields": {
+    "demoUrl": "required",
+    "shortDescription": "UI says max100 characters; validation also enforces min60",
+    "description": "min280 characters",
+    "howItIsMade": "min280 characters",
+    "publicGithubRepository": "at least one selectable repository required",
+    "sections": [
+      "Project details",
+      "Images",
+      "Tech stack",
+      "Select prizes",
+      "Video",
+      "Future",
+      "Final"
+    ]
+  },
+  "checkIns": "No explicit pending item displayed; full completion not independently established"
+}

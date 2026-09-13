@@ -1,0 +1,50 @@
+{
+  "commit": "4d96ea383f665d879ff59720c073d02e9c9c394b",
+  "checkedAt": "2026-09-13T00:02:54.105Z",
+  "environment": "clean git clone with npm ci; no project .env or signer seed copied",
+  "node": "v22.23.1",
+  "records": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:42.954Z",
+      "durationMs": 4220,
+      "output": "\nadded 170 packages, and audited 171 packages in 4s\n\n54 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:47.174Z",
+      "durationMs": 848,
+      "output": "\n> qwitness@0.1.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:48.022Z",
+      "durationMs": 1171,
+      "output": "\n> qwitness@0.1.0 test\n> vitest run\n\n\n RUN  v5.0.0 <project>/work/clean-validation\n\n\n Test Files  5 passed (5)\n      Tests  75 passed (75)\n   Start at  09:02:48\n   Duration  330ms (tests 38%, transform 31%, import 29%, worker 2%)\n\n"
+    },
+    {
+      "command": "npm run build:verifier",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:49.194Z",
+      "durationMs": 413,
+      "output": "\n> qwitness@0.1.0 build:verifier\n> tsx scripts/build-verifier.ts\n\nBuilt standalone offline-verifier.html and qwitness-verify.mjs with dependencies bundled.\n"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:49.607Z",
+      "durationMs": 4200,
+      "output": "\n> qwitness@0.1.0 build\n> next build\n\n▲ Next.js 16.3.5 (Turbopack)\n✓ Running next.config.ts took 911ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 1659ms\n  Running TypeScript ...\n  Finished TypeScript in 282ms ...\n  Collecting page data using 7 workers ...\n  Generating static pages using 7 workers (0/5) ...\n  Generating static pages using 7 workers (1/5) \r\n  Generating static pages using 7 workers (2/5) \r\n  Generating static pages using 7 workers (3/5) \r\n✓ Generating static pages using 7 workers (5/5) in 296ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ƒ /api/capabilities\n├ ƒ /api/receipt\n└ ○ /verify\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n⚠ Warning: Next.js ignored package-lock.json in <project> because it is outside the current Git repository (<project>/work/clean-validation).\n To use this directory, set `turbopack.root` in your Next.js config.\n\n"
+    },
+    {
+      "command": "npm run scan:secrets",
+      "exitCode": 0,
+      "startedAt": "2026-09-13T00:02:53.808Z",
+      "durationMs": 297,
+      "output": "\n> qwitness@0.1.0 scan:secrets\n> tsx scripts/secret-scan.ts\n\nSecret scan passed for 64 repository files and client static assets; exact local secret values and credential patterns checked. This is not an exhaustive security audit.\n"
+    }
+  ]
+}

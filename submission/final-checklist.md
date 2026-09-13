@@ -9,7 +9,8 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 - [x] Year-specific public deadline and Graph From Scratch requirements checked; see `requirements.md`.
 - [x] Dashboard attendance confirmed and Building from Scratch selected (implementation owner, 23:50 UTC).
 - [x] Public repository exists: [dorakingx/qwitness](https://github.com/dorakingx/qwitness), current recorded commit `393a658e48605b0bf620f433133a85780a335084`.
-- [ ] Create dashboard project and inspect exact submission fields.
+- [x] Create dashboard draft project and inspect exact submission fields.
+- [ ] Authorize the new repository for the ETHGlobal GitHub integration, then save draft details.
 - [ ] Confirm any remaining check-ins; no pending item was visible, but completion was not independently established.
 
 ## Implementation and verification
@@ -22,7 +23,8 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 - [ ] Complete public Explore → Receipt → Verify flow and fresh-browser checks.
 - [ ] Tampered content, alternate signer, unknown signer and disconnected verification evidenced in the final build.
 - [ ] Final unit/integration/E2E, clean-install/typecheck/build and secret scan results recorded with final commit and UTC.
-- [ ] Public deployment, production secrets and complete production flow verified.
+- [x] Public deployment and server-only signing secret configured; fresh-browser verification passes.
+- [ ] Graph credentials and full live production flow verified.
 - [ ] Measured benchmarks only; do not add estimates as results.
 
 ## Human and media
@@ -42,3 +44,5 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 - [ ] Check final form preview against repository, video, human/AI disclosure and selected Graph From Scratch prize.
 - [ ] Obtain user's final Submit confirmation; agent must not submit silently.
 - [ ] Preserve actual submission confirmation before reporting submitted.
+
+Follow-up evidence: 75 unit tests passed; clean clone install/typecheck/test/verifier-build/production-build/secret-scan passed for commit 4d96ea3. Four Playwright tests passed locally and against the public URL, including disk-only offline HTML verification and 390px viewport. Test receipts were explicitly synthetic and do not satisfy live Graph evidence. See evidence/clean-validation.json and participant-dashboard.json.

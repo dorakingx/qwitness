@@ -11,7 +11,7 @@ let started:number[]=[];
 export function getCapabilities() {
  let pin:string|null=null;
  try{pin=fingerprint(getSigner().publicKey);}catch{}
- return {name:'QWitness',schemaVersion:'1',algorithm:'ML-DSA-65',ready:!!process.env.GRAPH_API_KEY&&!!pin,graphConfigured:!!process.env.GRAPH_API_KEY,signingConfigured:!!pin,analysisMode:process.env.OPENAI_API_KEY?'llm':'deterministic',fingerprint:pin,markets:['USDC','DAI'],question:DEMO_QUESTION,limits:LIMITS,securityStatement:SECURITY_STATEMENT};
+ return {buildCommit:process.env.VERCEL_GIT_COMMIT_SHA||'local',name:'QWitness',schemaVersion:'1',algorithm:'ML-DSA-65',ready:!!process.env.GRAPH_API_KEY&&!!pin,graphConfigured:!!process.env.GRAPH_API_KEY,signingConfigured:!!pin,analysisMode:process.env.OPENAI_API_KEY?'llm':'deterministic',fingerprint:pin,markets:['USDC','DAI'],question:DEMO_QUESTION,limits:LIMITS,securityStatement:SECURITY_STATEMENT};
 }
 async function generate() {
  const signer=getSigner();

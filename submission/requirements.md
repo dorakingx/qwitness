@@ -58,4 +58,8 @@ The following are user requirements from `docs/GOAL.md`, not claims about extra 
 
 Confirmed from the dashboard: attendance confirmation, selected Building from Scratch pool, submission countdown. Confirmed from local MCP evidence: real SDK client tool discovery, capabilities, and verification of an explicitly test-only receipt. Live receipt creation returned a configuration error; this is not live Graph or LLM evidence.
 
-Pending: separate stake/exception details if needed; any further check-ins; project creation; exact form fields; public demo; successful live Graph execution; actual analysis through an LLM or meaningful AI-client workflow; substantive human review; participant audio; video QA; final submission receipt. Update these from evidence, not assumptions.
+Pending: separate stake/exception details if needed; any further check-ins; repository connection and completed form details; successful live Graph execution; actual analysis through an LLM or meaningful AI-client workflow; substantive human review; participant audio; video QA; final submission receipt. Update these from evidence, not assumptions.
+
+## Authenticated form follow-up
+
+A QWitness draft was created as Developer Tool. Final Submit was not clicked. Project details require a demo URL, a 60–100 character short description (minimum discovered by actual validation), description and how-it-is-made fields of at least 280 characters each, and a selectable public GitHub repository. Sections also include Images, Tech stack, Select prizes, Video, Future and Final. Details are not yet saved: the ETHGlobal GitHub installation cannot list the new repository, and reviewing permissions requires the participant’s GitHub 2FA/passkey authentication. See evidence/participant-dashboard.json. The public prototype is https://qwitness.vercel.app; full live Graph flow remains blocked.

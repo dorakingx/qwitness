@@ -1,6 +1,6 @@
 # QWitness submission draft
 
-**Not ready for final submission.** Snapshot: 2026-09-12 23:51 UTC, implementation commit `393a658e48605b0bf620f433133a85780a335084`. Public demo, live Graph query, LLM analysis, human review and narrated video remain pending. Authenticated form fields have not yet been inspected; the sections below are a proposed mapping.
+**Not ready for final submission.** Snapshot: 2026-09-12 23:51 UTC, implementation commit `393a658e48605b0bf620f433133a85780a335084`. The public Web prototype is deployed. Live Graph query, actual LLM analysis, human review and narrated video remain pending. The authenticated form was inspected; repository selection is blocked by GitHub installation access.
 
 ## Title
 
@@ -8,7 +8,7 @@ QWitness
 
 ## Short description
 
-Post-quantum evidence receipts for onchain AI agents.
+Portable signed evidence and independent verification for onchain AI agents.
 
 ## Description
 
@@ -37,7 +37,7 @@ The specification was AI-assisted, and Codex generated and assisted implementati
 ## Links and prize
 
 - Public source: [github.com/dorakingx/qwitness](https://github.com/dorakingx/qwitness).
-- Live demo: not deployed or verified at this snapshot.
+- Public prototype: [qwitness.vercel.app](https://qwitness.vercel.app). Browser verification passes using test-only receipts; live issuance awaits credentials.
 - Demo video: not recorded; no participant narration available yet.
 - Intended prize: The Graph — Best AI Tooling or AI Use Case with The Graph (From Scratch). Live-data and final evidence requirements remain unmet.
 
