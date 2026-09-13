@@ -1,0 +1,176 @@
+{
+  "kind": "live-graph-smoke",
+  "startedAt": "2026-09-13T01:28:57.694Z",
+  "finishedAt": "2026-09-13T01:28:58.053Z",
+  "evidence": {
+    "mode": "live",
+    "provider": "The Graph",
+    "protocol": "Aave V3",
+    "chainId": 1,
+    "subgraphId": "Cd2gEDVeqnjBn1hSeqFMitw8Q1iiyV9FYUZkLNRcL87g",
+    "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+    "observedAt": "2026-09-13T01:28:58.053Z",
+    "block": {
+      "number": 25965223,
+      "hash": "unknown",
+      "timestamp": "unknown"
+    },
+    "queries": [
+      {
+        "query": "query QWitnessMeta { _meta { deployment hasIndexingErrors block { number hash timestamp } } }",
+        "variables": {},
+        "response": {
+          "data": {
+            "_meta": {
+              "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+              "hasIndexingErrors": false,
+              "block": {
+                "number": 25965223,
+                "hash": "0xd809425328da8fc8c3362996480bd07090a0ab48d14ccc467d34adf12d2f1d5f",
+                "timestamp": 1789262927
+              }
+            }
+          }
+        }
+      },
+      {
+        "query": "query QWitnessMarkets($block: Int!, $assets: [Bytes!]!, $pool: Bytes!) {\n  _meta(block: {number: $block}) { deployment hasIndexingErrors block { number hash timestamp } }\n  reserves(first: 2, orderBy: id, orderDirection: asc, block: {number: $block}, where: {underlyingAsset_in: $assets, pool_: {pool: $pool}}) {\n    id underlyingAsset symbol decimals totalLiquidity availableLiquidity totalCurrentVariableDebt\n    totalPrincipalStableDebt utilizationRate lastUpdateTimestamp pool { id pool }\n  }\n}",
+        "variables": {
+          "block": 25965223,
+          "assets": [
+            "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "0x6b175474e89094c44da98b954eedeac495271d0f"
+          ],
+          "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+        },
+        "response": {
+          "data": {
+            "reserves": [
+              {
+                "id": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "symbol": "DAI",
+                "decimals": 18,
+                "totalLiquidity": "99160979704289501369404301",
+                "availableLiquidity": "10986152789081688143835318",
+                "totalCurrentVariableDebt": "114564862086850874429092604",
+                "totalPrincipalStableDebt": "0",
+                "utilizationRate": "0.88920891",
+                "lastUpdateTimestamp": 1789261811,
+                "pool": {
+                  "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                  "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+                }
+              },
+              {
+                "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "symbol": "USDC",
+                "decimals": 6,
+                "totalLiquidity": "1988763664988466",
+                "availableLiquidity": "181289475795409",
+                "totalCurrentVariableDebt": "2172246215903402",
+                "totalPrincipalStableDebt": "0",
+                "utilizationRate": "0.90884312",
+                "lastUpdateTimestamp": 1789262855,
+                "pool": {
+                  "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                  "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+                }
+              }
+            ],
+            "_meta": {
+              "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+              "hasIndexingErrors": false,
+              "block": {
+                "number": 25965223,
+                "hash": null,
+                "timestamp": null
+              }
+            }
+          }
+        }
+      }
+    ],
+    "reserves": [
+      {
+        "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "decimals": 6,
+        "totalLiquidity": "1988763664988466",
+        "availableLiquidity": "181289475795409",
+        "totalCurrentVariableDebt": "2172246215903402",
+        "totalPrincipalStableDebt": "0",
+        "utilizationRate": "0.90884312",
+        "lastUpdateTimestamp": 1789262855,
+        "pool": {
+          "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+          "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+        }
+      },
+      {
+        "id": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "symbol": "DAI",
+        "decimals": 18,
+        "totalLiquidity": "99160979704289501369404301",
+        "availableLiquidity": "10986152789081688143835318",
+        "totalCurrentVariableDebt": "114564862086850874429092604",
+        "totalPrincipalStableDebt": "0",
+        "utilizationRate": "0.88920891",
+        "lastUpdateTimestamp": 1789261811,
+        "pool": {
+          "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+          "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+        }
+      }
+    ],
+    "limitations": [
+      "Indexed reserve snapshots reflect indexed events, not continuously accrued balances at query time.",
+      "Utilization follows the Aave subgraph mapping: 1 − availableLiquidity / totalLiquidity, truncated to 8 decimal places; totalLiquidity is a token amount, not USD TVL.",
+      "Provider honesty, indexing accuracy, and current Ethereum state are not independently proven.",
+      "Block timestamp is unavailable from the provider."
+    ]
+  },
+  "calculations": [
+    {
+      "marketId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "symbol": "USDC",
+      "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "decimals": 6,
+      "totalLiquidity": "1988763664.988466",
+      "availableLiquidity": "181289475.795409",
+      "utilizedLiquidity": "1807474189.193057",
+      "utilizationRatio": "0.90884312",
+      "utilizationPercent": "90.884312",
+      "providerUtilizationRatio": "0.90884312",
+      "formula": "totalLiquidity == 0 ? 0 : (totalLiquidity - availableLiquidity) / totalLiquidity",
+      "rounding": "Truncate utilization ratio toward zero to 8 decimal places, matching Aave subgraph mapping.",
+      "evidenceRefs": [
+        "reserves[0].totalLiquidity",
+        "reserves[0].availableLiquidity",
+        "reserves[0].decimals"
+      ]
+    },
+    {
+      "marketId": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "symbol": "DAI",
+      "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "decimals": 18,
+      "totalLiquidity": "99160979.704289501369404301",
+      "availableLiquidity": "10986152.789081688143835318",
+      "utilizedLiquidity": "88174826.915207813225568983",
+      "utilizationRatio": "0.88920891",
+      "utilizationPercent": "88.920891",
+      "providerUtilizationRatio": "0.88920891",
+      "formula": "totalLiquidity == 0 ? 0 : (totalLiquidity - availableLiquidity) / totalLiquidity",
+      "rounding": "Truncate utilization ratio toward zero to 8 decimal places, matching Aave subgraph mapping.",
+      "evidenceRefs": [
+        "reserves[1].totalLiquidity",
+        "reserves[1].availableLiquidity",
+        "reserves[1].decimals"
+      ]
+    }
+  ]
+}

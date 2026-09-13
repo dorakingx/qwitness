@@ -31,6 +31,11 @@ describe('bounded Aave V3 provider', () => {
   it('fails on empty results', async () => {
     await expect(getGraphEvidence(key, mockFetch({ data: { _meta: meta, reserves: [] } }))).rejects.toMatchObject({ code: 'GRAPH_EMPTY' });
   });
+  it('distinguishes gateway authentication failure from schema rejection without retrying', async () => {
+    const fetcher = vi.fn().mockResolvedValue(Response.json({ errors: [{ message: 'auth error: API key not found' }] })) as typeof fetch;
+    await expect(getGraphEvidence(key, fetcher)).rejects.toMatchObject({ code: 'GRAPH_AUTH' });
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
   it.each(['deployment', 'number', 'hash', 'timestamp'])('rejects changed %s metadata between requests', async (field) => {
     const changed = structuredClone(meta);
     if (field === 'deployment') changed.deployment = `Qm${'b'.repeat(44)}`;
@@ -41,6 +46,13 @@ describe('bounded Aave V3 provider', () => {
   });
   it('fails on indexing errors', async () => {
     await expect(getGraphEvidence(key, mockFetch({ data: { _meta: { ...meta, hasIndexingErrors: true }, reserves: reserves() } }))).rejects.toMatchObject({ code: 'GRAPH_INDEXING' });
+  });
+  it('preserves unknown optional metadata when the number-pinned provider response omits it', async () => {
+    const pinnedMeta = { ...meta, block: { number: meta.block.number, hash: null, timestamp: null } };
+    const evidence = await getGraphEvidence(key, mockFetch({ data: { _meta: pinnedMeta, reserves: reserves() } }));
+    expect(evidence.block).toEqual({ number: meta.block.number, hash: 'unknown', timestamp: 'unknown' });
+    expect(evidence.queries[0].response).toEqual({ data: { _meta: meta } });
+    expect(evidence.limitations).toContain('Block timestamp is unavailable from the provider.');
   });
   it('does not leak provider error text or fetch exception credentials', async () => {
     await expect(getGraphEvidence(key, vi.fn().mockRejectedValue(new Error(`network ${key}`)) as typeof fetch)).rejects.toThrow('The Graph request failed.');

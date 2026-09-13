@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-13T01:30:19.428364+00:00",
+  "liveGraph": true,
+  "realMcpClient": true,
+  "analysisMode": "deterministic",
+  "block": {
+    "number": 25965223,
+    "hash": "unknown",
+    "timestamp": "unknown"
+  },
+  "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+  "markets": [
+    {
+      "symbol": "USDC",
+      "utilizationPercent": "90.884312"
+    },
+    {
+      "symbol": "DAI",
+      "utilizationPercent": "88.920891"
+    }
+  ],
+  "providerAuthentication": "succeeded after participant regeneration and clipboard recapture; exact activation cause not established",
+  "adapterFix": "Preserve missing optional pinned hash/timestamp as unknown; still reject conflicting known metadata, deployment, and block number.",
+  "unitTestsPassed": 77,
+  "productionFlow": "pending deployment verification",
+  "narration": "pending",
+  "submitted": false
+}

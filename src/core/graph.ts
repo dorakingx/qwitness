@@ -127,7 +127,13 @@ export async function getGraphEvidence(apiKey?: string, fetcher: typeof fetch = 
     try { response = await fetcher(GRAPH_CONFIG.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` }, body: JSON.stringify({ query: queryText, variables }), signal: controller.signal, redirect: 'error', cache: 'no-store' }); }
     catch { return fail('GRAPH_NETWORK', 'The Graph request failed. Check server connectivity and provider configuration.'); }
     if (!response.ok) return fail('GRAPH_HTTP', `The Graph returned HTTP ${response.status}. Check provider access and quota.`);
-    return record(await boundedJson(response));
+    const result = record(await boundedJson(response));
+    // Classify known authentication failures without exposing untrusted provider text.
+    if (Array.isArray(result.errors) && result.errors.some((error: unknown) => {
+      const message = error && typeof error === 'object' ? (error as Record<string, unknown>).message : null;
+      return typeof message === 'string' && /^auth error: API key not found$/i.test(message.trim());
+    })) fail('GRAPH_AUTH', 'The Graph did not recognize the configured API key. Check its activation or replace it in server secrets.');
+    return result;
   };
   const work = async (): Promise<GraphEvidence> => {
     const queries: GraphQueryRecord[] = [];
@@ -144,7 +150,11 @@ export async function getGraphEvidence(apiKey?: string, fetcher: typeof fetch = 
     const queryText = reserveQuery(withTimestamp), response = await query(queryText, variables);
     if (response.errors) fail('GRAPH_QUERY', 'The Graph rejected the supported reserve query.');
     const data = record(response.data), final = parseMeta(data._meta);
-    if (first.deployment !== final.deployment || first.block.number !== final.block.number || first.block.hash !== final.block.hash || first.block.timestamp !== final.block.timestamp) fail('GRAPH_METADATA', 'The Graph deployment or pinned block changed between requests. Retry to obtain a consistent snapshot.');
+    // A number-pinned _meta response can omit hash/timestamp. Missing optional
+    // metadata is not a conflicting value; keep it unknown in the final evidence.
+    const hashConflict = first.block.hash !== 'unknown' && final.block.hash !== 'unknown' && first.block.hash !== final.block.hash;
+    const timeConflict = first.block.timestamp !== 'unknown' && final.block.timestamp !== 'unknown' && first.block.timestamp !== final.block.timestamp;
+    if (first.deployment !== final.deployment || first.block.number !== final.block.number || hashConflict || timeConflict) fail('GRAPH_METADATA', 'The Graph deployment or pinned block changed between requests. Retry to obtain a consistent snapshot.');
     const reserves = parseReserves(data.reserves);
     if (final.block.timestamp !== 'unknown' && reserves.some((r) => r.lastUpdateTimestamp > (final.block.timestamp as number))) return schemaError();
     queries.push({ query: queryText, variables, response });

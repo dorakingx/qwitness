@@ -24,7 +24,7 @@ For reuse, clone the [public repository](https://github.com/dorakingx/qwitness),
 {"method":"tools/call","params":{"name":"create_market_receipt","arguments":{}}}
 ```
 
-At the current evidence snapshot it returns a missing-configuration error. `submission/evidence/mcp-smoke.json` records a real SDK-client session at 2026-09-12T23:47:45.573Z: discovery and test-only receipt verification succeeded; live issuance failed. Neither this test nor the deterministic mode establishes successful LLM reasoning over live Graph data.
+Live issuance now succeeds; see `evidence/live-integration-summary.json` and the latest `evidence/mcp-smoke.json`. The older configuration failure is historical. `submission/evidence/mcp-smoke.json` records a real SDK-client session at 2026-09-12T23:47:45.573Z: discovery and test-only receipt verification succeeded; live issuance failed. Neither this test nor the deterministic mode establishes successful LLM reasoning over live Graph data.
 
 ## Required evidence before applying
 
