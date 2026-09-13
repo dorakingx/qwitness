@@ -1,6 +1,6 @@
 # ETHOnline 2026 requirements
 
-Research checked at **2026-09-12 23:39:48 UTC / 2026-09-13 08:39:48 JST**. This records public rules, not participant acceptance or completed submission. Dashboard verification remains separate.
+Public rules checked at **2026-09-12 23:39:48 UTC / 2026-09-13 08:39:48 JST**. Participant dashboard status was separately checked by the implementation owner at **2026-09-12 23:50 UTC**. This is not a completed submission record.
 
 ## Deadline and event rules
 
@@ -48,10 +48,14 @@ The separate Continuity award is excluded. The composable/standardized award is 
 
 The user's sixteen hours is an execution budget, not a source for the deadline. At the check time, the public deadline was about 16 hours 20 minutes away. The implementation owner records task start as **2026-09-12 23:38:33 UTC** and the sixteen-hour budget end as **2026-09-13 15:38:33 UTC / September 14 00:38:33 JST**, which is earlier than the public deadline. Reserve the last two hours from **September 13 13:38:33 UTC / 22:38:33 JST** for the user's upload and submission.
 
-The implementation owner additionally reports seeing September 14, 01:00 am in Tokyo time for Project Submissions Due on the main event page in a browser. That page was logged out. This corroborates the public deadline but does not verify authenticated participant status. The initial public repository was created at [dorakingx/qwitness](https://github.com/dorakingx/qwitness), commit `c78e289`; that establishes repository access, not final feature completion.
+The implementation owner additionally saw September 14, 01:00 am in Tokyo time for Project Submissions Due on the main event page in a browser. The initial page appeared logged out; an existing authenticated session subsequently loaded. At **2026-09-12 23:50 UTC**, the [participant dashboard](https://ethglobal.com/events/ethonline2026/home) showed full attendance confirmation and **Building from Scratch selected**; Continuity was unselected. A roughly sixteen-hour countdown corroborated the public deadline. No project existed yet; Create project was available. No explicit pending check-in appeared, which does not prove that every check-in requirement is complete. Stake or exemption was not separately inspected.
+
+The public repository is [dorakingx/qwitness](https://github.com/dorakingx/qwitness); current implementation commit at this update is `393a658e48605b0bf620f433133a85780a335084`. Repository existence does not establish final feature completion.
 
 ## Project-specific requirements and pending verification
 
 The following are user requirements from `docs/GOAL.md`, not claims about extra organizer rules: approximately three minutes; 1920×1080, 30 fps, H.264 MP4; the participant's real English narration; manual YouTube upload and final Submit; no automatic microphone recording; at least 70% actual app/tool/verification footage.
 
-Pending: authenticated dashboard status and deadline; registration/acceptance; stake or exception; check-ins; project/track; exact form fields; demo/repository accessibility; live Graph execution; real AI/MCP run; substantive human review; participant audio; video QA; final submission receipt. Update these from evidence, not assumptions.
+Confirmed from the dashboard: attendance confirmation, selected Building from Scratch pool, submission countdown. Confirmed from local MCP evidence: real SDK client tool discovery, capabilities, and verification of an explicitly test-only receipt. Live receipt creation returned a configuration error; this is not live Graph or LLM evidence.
+
+Pending: separate stake/exception details if needed; any further check-ins; project creation; exact form fields; public demo; successful live Graph execution; actual analysis through an LLM or meaningful AI-client workflow; substantive human review; participant audio; video QA; final submission receipt. Update these from evidence, not assumptions.

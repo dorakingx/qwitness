@@ -66,9 +66,44 @@ export function signReceipt<T extends object>(payload: T, secretKey: Uint8Array)
   canonicalBytes(receipt);
   return receipt;
 }
+/** Reject duplicate object members, including differently escaped spellings of the same key.
+ * JSON.parse validates syntax first; this pass checks the otherwise-discarded key history.
+ */
+function rejectDuplicateKeys(text: string): void {
+  let cursor = 0;
+  const whitespace = () => { while (/\s/.test(text[cursor] || '') && cursor < text.length) cursor++; };
+  const readString = (): string => {
+    const start = cursor++;
+    while (cursor < text.length) {
+      if (text[cursor] === '\\') { cursor += 2; continue; }
+      if (text[cursor++] === '"') return JSON.parse(text.slice(start, cursor)) as string;
+    }
+    throw new Error('Invalid JSON string');
+  };
+  const readValue = (depth: number): void => {
+    if (depth > 24) throw new Error('JSON is nested too deeply');
+    whitespace();
+    if (text[cursor] === '{') {
+      cursor++; whitespace(); const seen = new Set<string>();
+      if (text[cursor] === '}') { cursor++; return; }
+      for (;;) {
+        whitespace(); const key = readString();
+        if (seen.has(key)) throw new Error('Duplicate JSON object member');
+        seen.add(key); whitespace(); cursor++; readValue(depth + 1); whitespace();
+        if (text[cursor++] === '}') break;
+      }
+    } else if (text[cursor] === '[') {
+      cursor++; whitespace(); if (text[cursor] === ']') { cursor++; return; }
+      for (;;) { readValue(depth + 1); whitespace(); if (text[cursor++] === ']') break; }
+    } else if (text[cursor] === '"') readString();
+    else { while (cursor < text.length && !/[,}\]\s]/.test(text[cursor])) cursor++; }
+  };
+  readValue(0);
+}
 export function parseReceipt(text: string): Receipt {
   if (new TextEncoder().encode(text).length > MAX_RECEIPT_BYTES) throw new Error('Receipt exceeds 256 KiB');
   const value: unknown = JSON.parse(text);
+  rejectDuplicateKeys(text);
   canonicalBytes(value);
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Receipt must be an object');
   const r = value as Receipt;

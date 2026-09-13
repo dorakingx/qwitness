@@ -17,3 +17,5 @@ jobs:
       - run: npm run build:verifier
       - run: npm run build
       - run: npx tsx scripts/secret-scan.ts
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
