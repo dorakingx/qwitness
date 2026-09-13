@@ -12,6 +12,16 @@ The proposed trust decision is to supply a trusted public key independently of t
 
 Please assess whether that trust model is appropriate for the intended analyst workflow. Explain which channel you would use to obtain the trusted key, what could go wrong, and one change you want in the product or documentation. A confirmation without actual consideration is not a substitute for substantive contribution.
 
+## Review that can start before Graph credentials arrive
+
+The public integrity verifier is available at https://qwitness.vercel.app/verify. Use the explicitly synthetic `video/public/test-only-receipt.json` and the separately supplied `video/public/test-only-pin.txt`. They were prepared by AI for testing and contain no real market observations. Their temporary test signer is different from the production signer: do not use **Pin this site's signer** for this sample.
+
+Import the test-only JSON into Verify, paste the test fingerprint, and run verification. Keep the original. Exercise **Change a number**, **Rewrite a claim**, **Re-sign with a test key**, and **Restore original receipt**. Record what you actually observe for integrity and signer trust after each action. Remove the pin and verify the original again. Observation time may now be stale; a valid signature does not establish freshness.
+
+Download `public/offline-verifier.html`, open it from disk, disconnect networking, and repeat verification. Both the verifier and test pin are supplied through this project; this demonstrates separate inputs, not an independently authenticated real-world trust channel. Decide which independent distribution channel you would require for a real deployment and explain why.
+
+This partial review can establish human feedback on the integrity/trust interface. It does **not** complete the live Graph/evidence review below or establish eligibility. Report the current build commit from `/api/capabilities` with your observations; the preview test artifacts were verified on `a2e6e387ea3d3f5c4196e1004d25280a52794679`.
+
 ## Manual test once the build is ready
 
 Use the actual build/commit supplied by the implementation owner. Record its URL or path and commit SHA. Keep an untouched copy of the downloaded receipt. These are expected results, not recorded results.

@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-09-13T00:27:32.677063+00:00",
+  "commit": "a2e6e387ea3d3f5c4196e1004d25280a52794679",
+  "ci": {
+    "conclusion": "success",
+    "headSha": "a2e6e387ea3d3f5c4196e1004d25280a52794679",
+    "jobs": [
+      {
+        "completedAt": "2026-09-13T00:25:55Z",
+        "conclusion": "success",
+        "databaseId": 103645256224,
+        "name": "checks",
+        "startedAt": "2026-09-13T00:25:05Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-13T00:25:07Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-13T00:25:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:08Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-09-13T00:25:07Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:15Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "startedAt": "2026-09-13T00:25:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:20Z",
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 4,
+            "startedAt": "2026-09-13T00:25:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:21Z",
+            "conclusion": "success",
+            "name": "Run npm run typecheck",
+            "number": 5,
+            "startedAt": "2026-09-13T00:25:20Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:22Z",
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 6,
+            "startedAt": "2026-09-13T00:25:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:22Z",
+            "conclusion": "success",
+            "name": "Run npm run build:verifier",
+            "number": 7,
+            "startedAt": "2026-09-13T00:25:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:27Z",
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 8,
+            "startedAt": "2026-09-13T00:25:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:28Z",
+            "conclusion": "success",
+            "name": "Run npx tsx scripts/secret-scan.ts",
+            "number": 9,
+            "startedAt": "2026-09-13T00:25:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:48Z",
+            "conclusion": "success",
+            "name": "Run npx playwright install --with-deps chromium",
+            "number": 10,
+            "startedAt": "2026-09-13T00:25:28Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:52Z",
+            "conclusion": "success",
+            "name": "Run npm run test:e2e",
+            "number": 11,
+            "startedAt": "2026-09-13T00:25:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:52Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 21,
+            "startedAt": "2026-09-13T00:25:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:52Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 22,
+            "startedAt": "2026-09-13T00:25:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T00:25:52Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 23,
+            "startedAt": "2026-09-13T00:25:52Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/dorakingx/qwitness/actions/runs/34727908419/job/103645256224"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/dorakingx/qwitness/actions/runs/34727908419"
+  },
+  "publicCapabilities": {
+    "buildCommit": "a2e6e387ea3d3f5c4196e1004d25280a52794679",
+    "name": "QWitness",
+    "schemaVersion": "1",
+    "algorithm": "ML-DSA-65",
+    "ready": false,
+    "graphConfigured": false,
+    "signingConfigured": true,
+    "analysisMode": "deterministic",
+    "fingerprint": "sha384:c75969a5fc62cf74b09d53485058992d6a90add25796aa3c353f70b8b83ad09656ff59061b6b28d755ae2e5bdeabea8e",
+    "markets": [
+      "USDC",
+      "DAI"
+    ],
+    "question": "Compare two lending markets using live onchain data. Which has higher utilization, and what should an analyst monitor next?",
+    "limits": {
+      "markets": 2,
+      "graphRequestsPerReceipt": 3,
+      "graphTimeoutSeconds": 12,
+      "llmTimeoutSeconds": 15,
+      "llmOutputTokens": 700,
+      "cacheSeconds": 60,
+      "executionsPerHourPerInstance": 12,
+      "receiptBytes": 262144
+    },
+    "securityStatement": "This receipt verifies the signed content against a specified public key. It does not prove that the data provider is honest, that the AI analysis is correct, or that Ethereum itself is quantum-resistant."
+  },
+  "deployedOfflineVerifierMatchesLocal": true,
+  "offlineVerifierSha256": "b510a7b056b3198b38e81dbacd259421310ce0120e6b4ee4a93d806a7473c750",
+  "testOnlyCli": {
+    "exitCode": 0,
+    "result": {
+      "integrity": "valid",
+      "signerTrust": "matches pinned key",
+      "freshness": "stale",
+      "observedAt": "2026-09-13T00:03:26.733Z",
+      "fingerprint": "sha384:994f093b048210e37d7343c6abafe9243f3eb92f56ec1b763d792a7b1296d5df5d0057edff54ccd5a4b4165d368c240f",
+      "reason": "Signature valid; signer matches the independently supplied pin."
+    }
+  },
+  "notProven": [
+    "live Graph issuance",
+    "actual LLM execution",
+    "human review",
+    "human narration",
+    "final submission"
+  ]
+}
