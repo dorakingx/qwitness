@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:10,800
+An evidence trail, under construction
+Silent technical preview. The app is real; the receipt used below is explicitly test-only.
+
+2
+00:00:10,800 --> 00:00:22,900
+Live integration is still blocked
+The Graph API key is missing. Receipt generation is disabled; no live market evidence is claimed.
+
+3
+00:00:22,900 --> 00:00:31,100
+No generated receipt
+The receipt screen stays empty. An unavailable live workflow is not shown as a successful query.
+
+4
+00:00:31,100 --> 00:00:41,200
+Import an explicitly synthetic sample
+This JSON was signed with a temporary test key. Its data is not from The Graph and is not AI analysis.
+
+5
+00:00:41,200 --> 00:00:51,400
+The original passes with an independent test pin
+The test fingerprint is supplied separately. Integrity is valid and the signer matches that pin.
+
+6
+00:00:51,400 --> 00:01:01,500
+Change a number in a copy
+The Tamper Lab changes the sample number while keeping its original signature. Verification fails.
+
+7
+00:01:01,500 --> 00:01:11,700
+Change the analysis text
+A separate copy changes the sample claim. The same original signature cannot authenticate the edited text.
+
+8
+00:01:11,700 --> 00:01:23,900
+Another valid signature is another signer
+A new temporary test key signs a copy. Integrity passes, but the original pinned signer does not match.
+
+9
+00:01:23,900 --> 00:01:34,000
+No pin means unknown trust
+Restore the original and remove the independent pin. A valid signature alone does not establish signer trust.
+
+10
+00:01:34,000 --> 00:01:46,300
+Verify from a local file, with networking disabled
+The standalone HTML bundles its verifier. The original test receipt verifies without an API, LLM, or CDN.
+
+11
+00:01:46,300 --> 00:01:56,500
+Offline tampering is detected too
+Change the synthetic number locally. The offline verifier rejects the original signature for this edited copy.
+
+12
+00:01:56,500 --> 00:02:07,300
+Integrity is not truth
+The signature does not prove provider honesty, AI correctness, or quantum resistance of Ethereum. Live data and human narration remain pending.

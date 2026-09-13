@@ -1,0 +1,99 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "durationSeconds": 127.3,
+  "durationInFrames": 3819,
+  "recordedAt": "2026-09-13T00:03:26.733Z",
+  "source": "http://127.0.0.1:3000",
+  "publicInitialDeployment": "https://qwitness.vercel.app",
+  "sourceCommit": "4d96ea383f665d879ff59720c073d02e9c9c394b",
+  "status": "SILENT TECHNICAL PREVIEW — TEST ONLY — NOT A SUBMISSION VIDEO",
+  "networkRequestsWhileOffline": [],
+  "phases": [
+    {
+      "start": 0,
+      "title": "An evidence trail, under construction",
+      "caption": "Silent technical preview. The app is real; the receipt used below is explicitly test-only.",
+      "image": "video/qa/01.png",
+      "end": 10.8
+    },
+    {
+      "start": 10.8,
+      "title": "Live integration is still blocked",
+      "caption": "The Graph API key is missing. Receipt generation is disabled; no live market evidence is claimed.",
+      "image": "video/qa/02.png",
+      "end": 22.9
+    },
+    {
+      "start": 22.9,
+      "title": "No generated receipt",
+      "caption": "The receipt screen stays empty. An unavailable live workflow is not shown as a successful query.",
+      "image": "video/qa/03.png",
+      "end": 31.1
+    },
+    {
+      "start": 31.1,
+      "title": "Import an explicitly synthetic sample",
+      "caption": "This JSON was signed with a temporary test key. Its data is not from The Graph and is not AI analysis.",
+      "image": "video/qa/04.png",
+      "end": 41.2
+    },
+    {
+      "start": 41.2,
+      "title": "The original passes with an independent test pin",
+      "caption": "The test fingerprint is supplied separately. Integrity is valid and the signer matches that pin.",
+      "image": "video/qa/05.png",
+      "end": 51.4
+    },
+    {
+      "start": 51.4,
+      "title": "Change a number in a copy",
+      "caption": "The Tamper Lab changes the sample number while keeping its original signature. Verification fails.",
+      "image": "video/qa/06.png",
+      "end": 61.5
+    },
+    {
+      "start": 61.5,
+      "title": "Change the analysis text",
+      "caption": "A separate copy changes the sample claim. The same original signature cannot authenticate the edited text.",
+      "image": "video/qa/07.png",
+      "end": 71.7
+    },
+    {
+      "start": 71.7,
+      "title": "Another valid signature is another signer",
+      "caption": "A new temporary test key signs a copy. Integrity passes, but the original pinned signer does not match.",
+      "image": "video/qa/08.png",
+      "end": 83.9
+    },
+    {
+      "start": 83.9,
+      "title": "No pin means unknown trust",
+      "caption": "Restore the original and remove the independent pin. A valid signature alone does not establish signer trust.",
+      "image": "video/qa/09.png",
+      "end": 94
+    },
+    {
+      "start": 94,
+      "title": "Verify from a local file, with networking disabled",
+      "caption": "The standalone HTML bundles its verifier. The original test receipt verifies without an API, LLM, or CDN.",
+      "image": "video/qa/10.png",
+      "end": 106.3
+    },
+    {
+      "start": 106.3,
+      "title": "Offline tampering is detected too",
+      "caption": "Change the synthetic number locally. The offline verifier rejects the original signature for this edited copy.",
+      "image": "video/qa/11.png",
+      "end": 116.5
+    },
+    {
+      "start": 116.5,
+      "title": "Integrity is not truth",
+      "caption": "The signature does not prove provider honesty, AI correctness, or quantum resistance of Ethereum. Live data and human narration remain pending.",
+      "image": "video/qa/12.png",
+      "end": 127.3
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Final submission checklist
 
-Snapshot: **2026-09-12 23:51 UTC**. Public deadline: September 13, 16:00 UTC / September 14, 01:00 JST. Task-budget end: September 13, 15:38:33 UTC / September 14, 00:38:33 JST. Reserve upload/submission time starting September 13, 13:38:33 UTC / 22:38:33 JST.
+Snapshot: **2026-09-13 00:24 UTC**. Public deadline: September 13, 16:00 UTC / September 14, 01:00 JST. Task-budget end: September 13, 15:38:33 UTC / September 14, 00:38:33 JST. Reserve upload/submission time starting September 13, 13:38:33 UTC / 22:38:33 JST.
 
 This is a partial implementation, **not submission-ready and not submitted**. Checks refer to evidence available at this snapshot; rerun required final checks on the final commit.
 
@@ -8,9 +8,10 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 
 - [x] Year-specific public deadline and Graph From Scratch requirements checked; see `requirements.md`.
 - [x] Dashboard attendance confirmed and Building from Scratch selected (implementation owner, 23:50 UTC).
-- [x] Public repository exists: [dorakingx/qwitness](https://github.com/dorakingx/qwitness), current recorded commit `393a658e48605b0bf620f433133a85780a335084`.
+- [x] Public repository exists: [dorakingx/qwitness](https://github.com/dorakingx/qwitness), latest recorded public/CI commit `6b40aa972a170047980ca27c04be448773be89e5`; CI succeeded.
 - [x] Create dashboard draft project and inspect exact submission fields.
-- [ ] Authorize the new repository for the ETHGlobal GitHub integration, then save draft details.
+- [x] Participant completed GitHub linkage; repository selected and draft details/technical text saved.
+- [x] Original logo, cover and three clearly labelled draft screenshots uploaded and saved; Save & Continue advanced to Tech Stack.
 - [ ] Confirm any remaining check-ins; no pending item was visible, but completion was not independently established.
 
 ## Implementation and verification
@@ -20,22 +21,26 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 - [x] Actual MCP SDK discovery and test-only receipt verification recorded in `evidence/mcp-smoke.json`.
 - [ ] Authorized Graph key configured and successful live query recorded. Current creation attempt fails configuration.
 - [ ] Actual LLM or meaningful AI-client workflow with live Graph data demonstrated. No LLM call recorded.
-- [ ] Complete public Explore → Receipt → Verify flow and fresh-browser checks.
-- [ ] Tampered content, alternate signer, unknown signer and disconnected verification evidenced in the final build.
-- [ ] Final unit/integration/E2E, clean-install/typecheck/build and secret scan results recorded with final commit and UTC.
+- [x] Four Playwright tests passed locally and against the public URL, including missing configuration and synthetic-receipt verification.
+- [x] Synthetic content tampering, alternate/unknown signer checks, disconnected HTML and 390px usability tested.
+- [x] Seventy-five unit tests passed; clean-clone install/typecheck/test/verifier-build/production-build/secret-scan passed for `4d96ea383f665d879ff59720c073d02e9c9c394b`.
+- [ ] Final required checks recorded with final commit and UTC; earlier clean-clone results do not automatically validate later edits.
 - [x] Public deployment and server-only signing secret configured; fresh-browser verification passes.
-- [ ] Graph credentials and full live production flow verified.
+- [ ] Graph credentials and full live production acquisition → analysis → signing → download → verification flow checked.
 - [ ] Measured benchmarks only; do not add estimates as results.
 
 ## Human and media
 
 - [ ] Participant gives a substantive trust/design judgment and actual test feedback; record only completed contributions.
-- [ ] AI disclosure and provenance reconciled with all generated/assisted work.
+- [x] Current AI disclosure reconciled with implementation, documentation, tests and video assistance. Recheck before final submission.
+- [x] Remotion preview rendered: `preview-without-narration.mp4`, 127.300 seconds, 1080p, 30 fps, H.264, no audio; real UI, visibly synthetic TEST-ONLY evidence.
+- [x] Preview metadata/full decode/beginning-middle-end playback passed; evidence is in `video/qa/`.
 - [ ] Conditional 326-word narration script reconciled with actual footage.
 - [ ] Participant records real narration; no AI voice or cloning.
-- [ ] Actual-screen demo edited, subtitles synchronized to real audio.
-- [ ] Video checked for duration, resolution, codec, audio and beginning/middle/end playback.
-- [ ] User uploads final video to YouTube and verifies usable visibility and HD processing.
+- [ ] Final live/AI/MCP demonstration recorded and edited, subtitles synchronized to participant speech.
+- [ ] Final narrated video checked for duration, resolution, codec, audio and beginning/middle/end playback.
+- [ ] Upload the final participant-narrated MP4/MOV directly to ETHGlobal’s Video tab: 2–4 minutes, at least 720p, audio without music. The silent preview is not a compliant substitute.
+- [ ] Participant also uploads the final video to YouTube as required by the brief and verifies visibility/HD processing. A YouTube URL alone does not satisfy the inspected direct-upload form.
 
 ## Submission
 
@@ -45,4 +50,4 @@ This is a partial implementation, **not submission-ready and not submitted**. Ch
 - [ ] Obtain user's final Submit confirmation; agent must not submit silently.
 - [ ] Preserve actual submission confirmation before reporting submitted.
 
-Follow-up evidence: 75 unit tests passed; clean clone install/typecheck/test/verifier-build/production-build/secret-scan passed for commit 4d96ea3. Four Playwright tests passed locally and against the public URL, including disk-only offline HTML verification and 390px viewport. Test receipts were explicitly synthetic and do not satisfy live Graph evidence. See evidence/clean-validation.json and participant-dashboard.json.
+Evidence: `evidence/clean-validation.json`, `evidence/mcp-smoke.json`, `evidence/participant-dashboard.json`, and `video/qa/`. Synthetic receipt checks do not satisfy live Graph evidence. Administrative GitHub linkage does not replace substantive human review or narration.

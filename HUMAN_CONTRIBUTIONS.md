@@ -4,3 +4,5 @@ Substantive technical review: pending.
 Hands-on product testing: pending.
 Human narration: pending.
 No eligibility guarantee is inferred from this record.
+
+2026-09-13: The participant reported “github連携しました” (GitHub connection completed). The agent subsequently confirmed qwitness was selectable in the ETHGlobal repository picker and saved the draft project details. This is an administrative setup contribution, not a claimed technical review or narration.

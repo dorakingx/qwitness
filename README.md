@@ -6,7 +6,9 @@
 
 QWitness packages a bounded Aave market query, deterministic utilization calculation and labeled analysis into an ML-DSA-65 signed JSON receipt. Web and MCP share the same TypeScript core. Anyone with the receipt can check its integrity offline and compare its signer against an independently supplied fingerprint.
 
-**Current state:** the Web prototype and offline integrity workflow are implemented. Live The Graph issuance is blocked until a server API key is configured and the live schema/query is exercised. No actual LLM call or live market result is claimed yet. The interface displays unavailable configuration honestly. The Graph prize requirements are not yet fulfilled. Human review, narration and final submission remain pending; there is no completed demo video yet.
+**Current state — September 13, 2026, 00:24 UTC:** the public web prototype and offline integrity workflow are implemented and browser-tested. Latest recorded public/CI commit: `6b40aa972a170047980ca27c04be448773be89e5` (CI succeeded). Live The Graph issuance is blocked until an authorized server API key is configured and the live schema/query is exercised. No actual LLM call or live market result is claimed. The Graph prize requirements are not yet fulfilled. Dashboard repository/details/technical text are saved following participant GitHub linkage; the original logo, cover and three clearly labelled draft screenshots are saved, confirmed by advancing to Tech Stack. Substantive human review, narration, direct ETHGlobal video upload, YouTube upload and final submission remain pending.
+
+A **silent technical preview** is available locally at `submission/preview-without-narration.mp4`: 2 minutes 7.3 seconds, 1080p, 30 fps, H.264, no audio. It shows real UI with synthetic TEST-ONLY evidence and states that live Graph/LLM execution is absent. [Video source and QA](video/README.md). It is not the final submission demo, and no public video URL is claimed. The inspected ETHGlobal Video tab requires a direct MP4/MOV upload: 2–4 minutes, at least 720p, audio without music. A final participant-narrated file must be uploaded there; the brief additionally requires the participant’s manual YouTube upload.
 
 ## Run locally
 
@@ -26,7 +28,7 @@ node --env-file=.secrets/signing.env node_modules/next/dist/bin/next dev --hostn
 
 Next.js reads `.env.local`. Restart the server after changing secrets. The signer seed is stable and ignored by Git, with file mode 0600. `public/signer.json` contains the public key and fingerprint only. Generating a signer refuses to overwrite an existing local key. A fresh clone generates its own signer and therefore a new public pin; it cannot impersonate the deployed prototype.
 
-## One workflow
+## Workflow once live issuance is configured
 
 1. Generate an evidence receipt from the supported comparison.
 2. Inspect the exact query, variables, deployment, indexed block, observation time and token units.
@@ -35,6 +37,8 @@ Next.js reads `.env.local`. Restart the server after changing secrets. The signe
 5. Re-sign with the explicitly labeled Test signer. Integrity can remain valid while the independently pinned signer mismatches.
 
 No pin means **unknown**, never automatically trusted. Live delivery, cached delivery and a missing provider are visibly different states. A missing LLM selects labeled deterministic analysis; invalid configured LLM output fails issuance.
+
+The independent verifier can already be used with an existing receipt. Tested synthetic examples demonstrate integrity and trust handling, not a successful market-data workflow.
 
 ## Offline and reusable tools
 
@@ -73,6 +77,8 @@ npm run test:live
 ```
 
 Evidence is in [submission/evidence](submission/evidence). Tests using fixture receipts are explicitly identified and are not evidence of a successful live Graph integration. No live receipt benchmark is published until one is measured.
+
+Verified so far: **75 unit tests**, plus **four Playwright tests locally and against the public URL**. They cover missing configuration, original/tampered test receipts, alternate/unknown signers, disk-only offline verification and 390px usability. An actual MCP SDK client listed tools and verified a test-only receipt; live creation returned a configuration error. [Clean-clone evidence](submission/evidence/clean-validation.json) records successful install, typecheck, all 75 tests, verifier build, production build and secret scan for `4d96ea383f665d879ff59720c073d02e9c9c394b`. That result applies to the recorded commit; later edits require final validation. The preview also passed full decode and actual beginning/middle/end playback checks.
 
 [Requirements](submission/requirements.md) · [Judge guide](submission/judge-guide.md) · [Submission draft](submission/submission.md) · [Human review packet](docs/human-review.md) · [AI assistance disclosure](AI_USAGE.md) · [Human contribution record](HUMAN_CONTRIBUTIONS.md).
 

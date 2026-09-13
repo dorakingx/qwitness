@@ -1,0 +1,6 @@
+node_modules/
+raw/
+public/browser-recording.webm
+qa/*.png
+*.mp4
+.remotion/

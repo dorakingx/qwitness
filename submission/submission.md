@@ -1,6 +1,6 @@
 # QWitness submission draft
 
-**Not ready for final submission.** Snapshot: 2026-09-12 23:51 UTC, implementation commit `393a658e48605b0bf620f433133a85780a335084`. The public Web prototype is deployed. Live Graph query, actual LLM analysis, human review and narrated video remain pending. The authenticated form was inspected; repository selection is blocked by GitHub installation access.
+**Not ready for final submission.** Snapshot: 2026-09-13 00:24 UTC. Latest recorded public/CI commit: `6b40aa972a170047980ca27c04be448773be89e5`, with successful CI. The public web prototype is deployed. The participant completed GitHub linkage; repository selection, project details and technical text were saved in the dashboard draft. The original logo, cover and three clearly labelled draft screenshots were uploaded and saved; Save & Continue advanced to Tech Stack. Live Graph query, actual LLM analysis, substantive human review and narrated video remain pending. No final Submit has occurred.
 
 ## Title
 
@@ -32,13 +32,17 @@ QWitness-specific source was created in a new repository for this event. The new
 
 ## AI and human contribution
 
-The specification was AI-assisted, and Codex generated and assisted implementation, documentation and test work. The goal is retained in `docs/GOAL.md`. Participant design review, hands-on test feedback and actual narration are still pending; do not claim they have happened. Reconcile this section with the final `AI_USAGE.md` and `HUMAN_CONTRIBUTIONS.md` before submitting.
+The specification was AI-assisted, and Codex generated and assisted implementation, documentation, testing and preview-video work. The goal is retained in `docs/GOAL.md`. The participant completed GitHub linkage; this is an administrative contribution. Participant design review, hands-on test feedback and narration are still pending. Reconcile this section with `AI_USAGE.md` and `HUMAN_CONTRIBUTIONS.md` before submitting.
+
+## Verification so far
+
+Seventy-five unit tests passed, as did four Playwright tests locally and against the public URL. Browser evidence uses explicitly synthetic receipts to check integrity, tampering, alternate/unknown signers, offline verification and mobile-width usability. Clean-clone install, typecheck, 75 tests, verifier build, production build and secret scan passed for earlier commit `4d96ea383f665d879ff59720c073d02e9c9c394b`; see `submission/evidence/clean-validation.json`. These checks do not establish live Graph or LLM execution, and earlier clean-clone results must not be attributed to untested later edits.
 
 ## Links and prize
 
 - Public source: [github.com/dorakingx/qwitness](https://github.com/dorakingx/qwitness).
 - Public prototype: [qwitness.vercel.app](https://qwitness.vercel.app). Browser verification passes using test-only receipts; live issuance awaits credentials.
-- Demo video: not recorded; no participant narration available yet.
+- Technical preview: `submission/preview-without-narration.mp4`, 127.300 seconds, 1920×1080, 30 fps, H.264, no audio. It records actual UI using a synthetic receipt with missing live Graph/LLM labels. Decode and beginning/middle/end playback passed. It is not the final hackathon demo; no participant narration or YouTube video is available yet. The actual ETHGlobal Video tab requires a direct MP4/MOV upload, 2–4 minutes, at least 720p, with audio and without music. A final participant-narrated file must be uploaded directly there; the brief also requires the participant’s manual YouTube upload.
 - Intended prize: The Graph — Best AI Tooling or AI Use Case with The Graph (From Scratch). Live-data and final evidence requirements remain unmet.
 
 This receipt verifies signed content against a specified public key. It does not prove the provider is honest, the AI analysis is correct, or Ethereum itself is quantum-resistant. This is an unaudited prototype.

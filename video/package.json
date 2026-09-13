@@ -1,0 +1,15 @@
+{
+  "name": "qwitness-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.tsx",
+    "render:preview": "remotion render src/index.tsx TechnicalPreview ../submission/preview-without-narration.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --concurrency=2 --overwrite"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.524",
+    "remotion": "4.0.524",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "capturedAt": "2026-09-13T00:11:45.522Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1080
+  },
+  "baseUrl": "https://qwitness.vercel.app",
+  "status": "DRAFT — live Graph execution is still unverified",
+  "requestsWhileOffline": 0,
+  "browserErrors": [],
+  "captures": [
+    {
+      "file": "draft-01-explore-missing-graph-key.png",
+      "width": 1440,
+      "height": 1507,
+      "source": "https://qwitness.vercel.app",
+      "state": "Actual public UI. Graph key missing; live generation disabled."
+    },
+    {
+      "file": "draft-02-verify-explicit-test-only-receipt.png",
+      "width": 1440,
+      "height": 1080,
+      "source": "https://qwitness.vercel.app",
+      "state": "Actual UI import. TEST ONLY payload is visible. Temporary test signer with separately supplied test pin. No market data."
+    },
+    {
+      "file": "draft-03-standalone-offline-test-verification.png",
+      "width": 1440,
+      "height": 1526,
+      "source": "file:///Users/hatanakatomoya/Developer/App/qwitness/public/offline-verifier.html",
+      "state": "Bundled standalone verifier opened from local file. Network disabled. TEST ONLY receipt and temporary test pin."
+    }
+  ]
+}

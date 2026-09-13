@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#f6f7f2"/>
+<g transform="translate(59 49)" color="#22302d"><path d="m16 3 11 4v9c0 6-11 13-11 13S5 22 5 16V7l11-4Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m11 16 3.5 3.5L22 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="104" y="77" font-family="Arial,sans-serif" font-size="29" font-weight="700" letter-spacing="-1" fill="#22302d">QWitness<tspan fill="#84977c">.</tspan></text>
+<text x="1134" y="74" text-anchor="end" font-family="monospace" font-size="12" letter-spacing="1.7" fill="#6f7872">ETHONLINE 2026</text>
+<path d="M64 112h1072" stroke="#dde2d9"/>
+<circle cx="69" cy="172" r="4" fill="#79936c"/>
+<text x="86" y="177" font-family="monospace" font-size="12" letter-spacing="1.6" fill="#63765b">EVIDENCE, YOU CAN CARRY.</text>
+<text x="61" y="269" font-family="Arial,sans-serif" font-size="65" letter-spacing="-3" fill="#22302d">An evidence trail.</text>
+<text x="61" y="345" font-family="Arial,sans-serif" font-size="65" letter-spacing="-3" fill="#84977c">For every answer.</text>
+<text x="64" y="410" font-family="Arial,sans-serif" font-size="23" fill="#6f7872">Post-quantum evidence receipts</text>
+<text x="64" y="444" font-family="Arial,sans-serif" font-size="23" fill="#6f7872">for onchain AI agents.</text>
+<g transform="translate(845 180) rotate(-6 125 160)"><rect x="-14" y="10" width="250" height="322" rx="11" fill="#e7eee0" stroke="#d0dbca"/></g>
+<g transform="translate(849 170) rotate(4 125 160)">
+<rect width="250" height="322" rx="11" fill="#fffefa" stroke="#cfd8c8"/>
+<text x="25" y="40" font-family="monospace" font-size="10" letter-spacing="1.3" fill="#788d6c">QWITNESS / RECEIPT</text>
+<path d="M25 58h200" stroke="#dfe5d9"/>
+<text x="25" y="94" font-family="Arial,sans-serif" font-size="19" fill="#22302d">Source evidence</text><text x="25" y="117" font-family="monospace" font-size="10" fill="#829278">QUERY · RESPONSE · BLOCK</text>
+<path d="M25 137h200" stroke="#e5eadf"/>
+<text x="25" y="174" font-family="Arial,sans-serif" font-size="19" fill="#22302d">Traceable analysis</text><text x="25" y="197" font-family="monospace" font-size="10" fill="#829278">CLAIMS · REFERENCES</text>
+<path d="M25 217h200" stroke="#e5eadf"/>
+<rect x="25" y="241" width="200" height="51" rx="5" fill="#e9f1e2"/>
+<text x="41" y="262" font-family="monospace" font-size="10" fill="#597449">ML-DSA-65</text><text x="41" y="279" font-family="Arial,sans-serif" font-size="11" fill="#597449">A signature you can verify.</text>
+</g>
+<circle cx="1102" cy="483" r="38" fill="#ccedc9" stroke="#f6f7f2" stroke-width="7"/>
+<g transform="translate(1085 465) scale(1.1)" color="#416039"><path d="m16 3 11 4v9c0 6-11 13-11 13S5 22 5 16V7l11-4Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m11 16 3.5 3.5L22 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M64 555h1072" stroke="#dde2d9"/>
+<text x="64" y="602" font-family="monospace" font-size="11" letter-spacing="1" fill="#75846b">THE GRAPH / ETHEREUM</text>
+<text x="470" y="602" font-family="monospace" font-size="11" letter-spacing="1" fill="#75846b">ML-DSA-65 / PORTABLE JSON</text>
+<text x="1136" y="602" text-anchor="end" font-family="monospace" font-size="10" letter-spacing="1" fill="#8b9682">RESEARCH PROTOTYPE</text>
+</svg>

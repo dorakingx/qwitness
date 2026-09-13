@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-13T00:10:10.435Z",
+  "file": "submission/preview-without-narration.mp4",
+  "checks": [
+    {
+      "name": "beginning",
+      "seekTo": 5,
+      "currentTime": 6.221219,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "paused": false,
+      "error": null
+    },
+    {
+      "name": "middle",
+      "seekTo": 66,
+      "currentTime": 67.220321,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "paused": false,
+      "error": null
+    },
+    {
+      "name": "end",
+      "seekTo": 122,
+      "currentTime": 123.210945,
+      "videoWidth": 1920,
+      "videoHeight": 1080,
+      "readyState": 4,
+      "paused": false,
+      "error": null
+    }
+  ]
+}

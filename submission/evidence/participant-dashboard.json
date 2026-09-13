@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13T00:05:25.904698Z",
+  "checkedAt": "2026-09-13T00:24:29.509780+00:00",
   "method": "Authenticated browser accessibility observations; no final submit",
   "dashboardUrl": "https://ethglobal.com/events/ethonline2026/home",
   "projectUrl": "https://ethglobal.com/events/ethonline2026/project",
@@ -9,8 +9,8 @@
   "projectName": "QWitness",
   "category": "Developer Tool",
   "submitted": false,
-  "detailsSaved": false,
-  "detailsSaveBlocker": "ETHGlobal GitHub installation does not list newly created qwitness repository. Permission review requires participant GitHub sudo-mode 2FA/passkey authentication.",
+  "detailsSaved": true,
+  "detailsSaveBlocker": null,
   "observedFields": {
     "demoUrl": "required",
     "shortDescription": "UI says max100 characters; validation also enforces min60",
@@ -27,5 +27,25 @@
       "Final"
     ]
   },
-  "checkIns": "No explicit pending item displayed; full completion not independently established"
+  "checkIns": "No explicit pending item displayed; full completion not independently established",
+  "repository": "https://github.com/dorakingx/qwitness",
+  "imagesRequirements": {
+    "logo": "square, e.g.512x512",
+    "cover": "16:9",
+    "screenshots": "minimum3"
+  },
+  "techStackSaved": true,
+  "imagesSaved": true,
+  "imagesStatus": "Draft originals: logo, cover, and three actual screenshots; verification screens use explicitly test-only receipts",
+  "videoUploaded": false,
+  "finalSubmitPressed": false,
+  "finalAttestationChecked": false,
+  "videoRequirements": {
+    "delivery": "Direct .mp4 or .mov file upload",
+    "duration": "2 to 4 minutes",
+    "minimumResolution": "720p",
+    "audio": "Audio without music"
+  },
+  "finalFormBlocker": "Please upload a video. A demo video is required for this event.",
+  "futureInterests": "Optional multiselect left unanswered; participant intent not inferred"
 }

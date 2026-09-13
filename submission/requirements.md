@@ -63,3 +63,11 @@ Pending: separate stake/exception details if needed; any further check-ins; repo
 ## Authenticated form follow-up
 
 A QWitness draft was created as Developer Tool. Final Submit was not clicked. Project details require a demo URL, a 60–100 character short description (minimum discovered by actual validation), description and how-it-is-made fields of at least 280 characters each, and a selectable public GitHub repository. Sections also include Images, Tech stack, Select prizes, Video, Future and Final. Details are not yet saved: the ETHGlobal GitHub installation cannot list the new repository, and reviewing permissions requires the participant’s GitHub 2FA/passkey authentication. See evidence/participant-dashboard.json. The public prototype is https://qwitness.vercel.app; full live Graph flow remains blocked.
+
+Follow-up: the participant completed GitHub connection; qwitness became selectable and project details were saved. The Images section requires a square logo, a 16:9 cover and at least three screenshots. See the latest participant-dashboard.json timestamp. Final submission remains unperformed.
+
+## Authenticated form follow-up: September 13, 2026
+
+Project details and tech stack are saved after the participant completed GitHub linkage. Logo, cover and three draft screenshots were uploaded and Save & Continue reached Tech Stack successfully. The screenshots explicitly disclose missing Graph configuration or synthetic test-only verification.
+
+The Video page requires a **direct .mp4 or .mov file upload**, 2–4 minutes, minimum 720p, with audio without music. A YouTube URL alone does not replace this upload. The user's requested YouTube upload remains a separate participant action. Final currently lists the missing demo video and leaves the rules attestation unchecked and Submit project disabled. The agent did not check the attestation or submit. Optional future-program interests were left unanswered because the participant's intent is unknown.
