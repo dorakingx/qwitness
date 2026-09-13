@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13T01:30:19.428364+00:00",
+  "checkedAt": "2026-09-13T01:34:55.367173+00:00",
   "liveGraph": true,
   "realMcpClient": true,
   "analysisMode": "deterministic",
@@ -22,7 +22,12 @@
   "providerAuthentication": "succeeded after participant regeneration and clipboard recapture; exact activation cause not established",
   "adapterFix": "Preserve missing optional pinned hash/timestamp as unknown; still reject conflicting known metadata, deployment, and block number.",
   "unitTestsPassed": 77,
-  "productionFlow": "pending deployment verification",
+  "productionFlow": "passed: HTTP 200 live receipt, valid pinned signature, tampering invalid",
   "narration": "pending",
-  "submitted": false
+  "submitted": false,
+  "productionCommit": "54bdc9c4ef32079c48389ee85dd4aafecda9c9bc",
+  "ciRun": "34730695512",
+  "ci": "success",
+  "browserFlow": "live generation, download click, valid original, changed number invalid, alternate signer valid with mismatch",
+  "graphPrizeDraft": "Graph selected, Partner Prizes only, From Scratch; saved and advanced to Video"
 }

@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-09-13T01:31:22.715Z",
+  "buildCommit": "54bdc9c4ef32079c48389ee85dd4aafecda9c9bc",
+  "httpStatus": 200,
+  "delivery": {
+    "mode": "live",
+    "servedAt": "2026-09-13T01:31:22.435Z",
+    "cacheAgeSeconds": 0
+  },
+  "block": {
+    "number": 25965234,
+    "hash": "unknown",
+    "timestamp": "unknown"
+  },
+  "analysis": "deterministic",
+  "original": {
+    "integrity": "valid",
+    "signerTrust": "matches pinned key",
+    "freshness": "fresh",
+    "observedAt": "2026-09-13T01:31:22.382Z",
+    "fingerprint": "sha384:c75969a5fc62cf74b09d53485058992d6a90add25796aa3c353f70b8b83ad09656ff59061b6b28d755ae2e5bdeabea8e",
+    "reason": "Signature valid; signer matches the independently supplied pin."
+  },
+  "tampered": {
+    "integrity": "invalid",
+    "signerTrust": "matches pinned key",
+    "freshness": "unknown",
+    "observedAt": null,
+    "fingerprint": "sha384:c75969a5fc62cf74b09d53485058992d6a90add25796aa3c353f70b8b83ad09656ff59061b6b28d755ae2e5bdeabea8e",
+    "reason": "Signed content or signature has changed"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "protected": {
+    "schemaVersion": "1",
+    "domain": "QWitness/receipt/v1",
+    "algorithm": "ML-DSA-65",
+    "signerFingerprint": "sha384:c75969a5fc62cf74b09d53485058992d6a90add25796aa3c353f70b8b83ad09656ff59061b6b28d755ae2e5bdeabea8e"
+  },
+  "payload": {
+    "question": "Compare two lending markets using live onchain data. Which has higher utilization, and what should an analyst monitor next?",
+    "issuedAt": "2026-09-13T01:31:22.384Z",
+    "evidence": {
+      "mode": "live",
+      "provider": "The Graph",
+      "protocol": "Aave V3",
+      "chainId": 1,
+      "subgraphId": "Cd2gEDVeqnjBn1hSeqFMitw8Q1iiyV9FYUZkLNRcL87g",
+      "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+      "observedAt": "2026-09-13T01:31:22.382Z",
+      "block": {
+        "number": 25965234,
+        "hash": "unknown",
+        "timestamp": "unknown"
+      },
+      "queries": [
+        {
+          "query": "query QWitnessMeta { _meta { deployment hasIndexingErrors block { number hash timestamp } } }",
+          "variables": {},
+          "response": {
+            "data": {
+              "_meta": {
+                "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+                "hasIndexingErrors": false,
+                "block": {
+                  "number": 25965234,
+                  "hash": "0xd6031122e94ff69a2906e0c0ff29c460386e72f6988e19eef8841afe584acc7c",
+                  "timestamp": 1789263071
+                }
+              }
+            }
+          }
+        },
+        {
+          "query": "query QWitnessMarkets($block: Int!, $assets: [Bytes!]!, $pool: Bytes!) {\n  _meta(block: {number: $block}) { deployment hasIndexingErrors block { number hash timestamp } }\n  reserves(first: 2, orderBy: id, orderDirection: asc, block: {number: $block}, where: {underlyingAsset_in: $assets, pool_: {pool: $pool}}) {\n    id underlyingAsset symbol decimals totalLiquidity availableLiquidity totalCurrentVariableDebt\n    totalPrincipalStableDebt utilizationRate lastUpdateTimestamp pool { id pool }\n  }\n}",
+          "variables": {
+            "block": 25965234,
+            "assets": [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "0x6b175474e89094c44da98b954eedeac495271d0f"
+            ],
+            "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+          },
+          "response": {
+            "data": {
+              "reserves": [
+                {
+                  "id": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                  "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                  "symbol": "DAI",
+                  "decimals": 18,
+                  "totalLiquidity": "99160979704289501369404301",
+                  "availableLiquidity": "10986152789081688143835318",
+                  "totalCurrentVariableDebt": "114564862086850874429092604",
+                  "totalPrincipalStableDebt": "0",
+                  "utilizationRate": "0.88920891",
+                  "lastUpdateTimestamp": 1789261811,
+                  "pool": {
+                    "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                    "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+                  }
+                },
+                {
+                  "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                  "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "symbol": "USDC",
+                  "decimals": 6,
+                  "totalLiquidity": "1988763664988466",
+                  "availableLiquidity": "181289475795409",
+                  "totalCurrentVariableDebt": "2172246534002202",
+                  "totalPrincipalStableDebt": "0",
+                  "utilizationRate": "0.90884312",
+                  "lastUpdateTimestamp": 1789262963,
+                  "pool": {
+                    "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+                    "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+                  }
+                }
+              ],
+              "_meta": {
+                "deployment": "QmX2VfvEspbShTdcjefWeG3CKBVXKWm9naxH6TVhqPb9qY",
+                "hasIndexingErrors": false,
+                "block": {
+                  "number": 25965234,
+                  "hash": null,
+                  "timestamp": null
+                }
+              }
+            }
+          }
+        }
+      ],
+      "reserves": [
+        {
+          "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+          "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "totalLiquidity": "1988763664988466",
+          "availableLiquidity": "181289475795409",
+          "totalCurrentVariableDebt": "2172246534002202",
+          "totalPrincipalStableDebt": "0",
+          "utilizationRate": "0.90884312",
+          "lastUpdateTimestamp": 1789262963,
+          "pool": {
+            "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+            "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+          }
+        },
+        {
+          "id": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+          "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "symbol": "DAI",
+          "decimals": 18,
+          "totalLiquidity": "99160979704289501369404301",
+          "availableLiquidity": "10986152789081688143835318",
+          "totalCurrentVariableDebt": "114564862086850874429092604",
+          "totalPrincipalStableDebt": "0",
+          "utilizationRate": "0.88920891",
+          "lastUpdateTimestamp": 1789261811,
+          "pool": {
+            "id": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+            "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+          }
+        }
+      ],
+      "limitations": [
+        "Indexed reserve snapshots reflect indexed events, not continuously accrued balances at query time.",
+        "Utilization follows the Aave subgraph mapping: 1 − availableLiquidity / totalLiquidity, truncated to 8 decimal places; totalLiquidity is a token amount, not USD TVL.",
+        "Provider honesty, indexing accuracy, and current Ethereum state are not independently proven.",
+        "Block timestamp is unavailable from the provider."
+      ]
+    },
+    "calculations": [
+      {
+        "marketId": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "symbol": "USDC",
+        "underlyingAsset": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "decimals": 6,
+        "totalLiquidity": "1988763664.988466",
+        "availableLiquidity": "181289475.795409",
+        "utilizedLiquidity": "1807474189.193057",
+        "utilizationRatio": "0.90884312",
+        "utilizationPercent": "90.884312",
+        "providerUtilizationRatio": "0.90884312",
+        "formula": "totalLiquidity == 0 ? 0 : (totalLiquidity - availableLiquidity) / totalLiquidity",
+        "rounding": "Truncate utilization ratio toward zero to 8 decimal places, matching Aave subgraph mapping.",
+        "evidenceRefs": [
+          "reserves[0].totalLiquidity",
+          "reserves[0].availableLiquidity",
+          "reserves[0].decimals"
+        ]
+      },
+      {
+        "marketId": "0x6b175474e89094c44da98b954eedeac495271d0f0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "symbol": "DAI",
+        "underlyingAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "decimals": 18,
+        "totalLiquidity": "99160979.704289501369404301",
+        "availableLiquidity": "10986152.789081688143835318",
+        "utilizedLiquidity": "88174826.915207813225568983",
+        "utilizationRatio": "0.88920891",
+        "utilizationPercent": "88.920891",
+        "providerUtilizationRatio": "0.88920891",
+        "formula": "totalLiquidity == 0 ? 0 : (totalLiquidity - availableLiquidity) / totalLiquidity",
+        "rounding": "Truncate utilization ratio toward zero to 8 decimal places, matching Aave subgraph mapping.",
+        "evidenceRefs": [
+          "reserves[1].totalLiquidity",
+          "reserves[1].availableLiquidity",
+          "reserves[1].decimals"
+        ]
+      }
+    ],
+    "analysis": {
+      "mode": "deterministic",
+      "model": null,
+      "claims": [
+        {
+          "text": "USDC has higher indexed utilization at the displayed precision.",
+          "evidenceRefs": [
+            "calculations/0",
+            "calculations/1"
+          ]
+        }
+      ],
+      "limitations": [
+        "Rule-based comparison and monitoring; no LLM was called.",
+        "Indexed data can lag current chain state; observation time does not prove data freshness.",
+        "An indexed snapshot does not continuously accrue balances to the time of this analysis.",
+        "This comparison is not a forecast, trading recommendation, or guarantee of available withdrawals."
+      ],
+      "suggestedMonitoring": [
+        {
+          "text": "Monitor available liquidity in each reserve for changes in liquidity available to borrowers and withdrawals.",
+          "evidenceRefs": [
+            "calculations/0",
+            "calculations/1"
+          ]
+        },
+        {
+          "text": "Check the indexed block and reserve update times before relying on this snapshot.",
+          "evidenceRefs": [
+            "calculations/0",
+            "calculations/1"
+          ]
+        }
+      ]
+    },
+    "policyVersion": "qwitness-policy-1",
+    "limitations": [
+      "This receipt verifies the signed content against a specified public key. It does not prove that the data provider is honest, that the AI analysis is correct, or that Ethereum itself is quantum-resistant.",
+      "Research prototype. No independent security audit or certification.",
+      "issuedAt and observedAt are signer assertions, not trusted timestamps.",
+      "Key distribution, key compromise and JavaScript side channels are outside receipt integrity guarantees.",
+      "Indexed reserve snapshots reflect indexed events, not continuously accrued balances at query time.",
+      "Utilization follows the Aave subgraph mapping: 1 − availableLiquidity / totalLiquidity, truncated to 8 decimal places; totalLiquidity is a token amount, not USD TVL.",
+      "Provider honesty, indexing accuracy, and current Ethereum state are not independently proven.",
+      "Block timestamp is unavailable from the provider.",
+      "Rule-based comparison and monitoring; no LLM was called.",
+      "Indexed data can lag current chain state; observation time does not prove data freshness.",
+      "An indexed snapshot does not continuously accrue balances to the time of this analysis.",
+      "This comparison is not a forecast, trading recommendation, or guarantee of available withdrawals."
+    ]
+  },
+  "publicKey": "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",
+  "signature": "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"
+}
