@@ -1,5 +1,11 @@
 # QWitness status
 
+## Latest update — 2026-09-13T01:21:56.382594+00:00
+
+The participant authorized API-key creation and Free-plan setup without an individual spending cap after the UI rejected zero. The key is saved locally with mode 0600, restricted to the intended subgraph, and configured as a sensitive production-only Vercel variable. A fresh clipboard copy matched the local secret exactly. The new production deployment serves commit `4ed5cc963d8984b58f8c0269ccdf846f2cc5090c`.
+
+Live acquisition remains blocked: local gateway requests return `auth error: API key not found`; production receipt creation returns HTTP 503. Configured credentials are not proof of successful integration. See `submission/evidence/graph-activation.json`. The Graph prize requirements remain unmet. No successful live query, participant narration or final submission is claimed. The participant requested prioritizing submission with 11% of Codex weekly usage remaining.
+
 Updated: **2026-09-13 00:24 UTC**. Start: September 12, 23:38:33 UTC. Budget end: September 13, 15:38:33 UTC / September 14, 00:38:33 JST. Official deadline: September 13, 16:00 UTC / September 14, 01:00 JST. Reserve upload/submission time from September 13, 13:38:33 UTC / 22:38:33 JST.
 
 Public repository: [dorakingx/qwitness](https://github.com/dorakingx/qwitness). Latest verified app/deployment commit: `a2e6e387ea3d3f5c4196e1004d25280a52794679`; CI succeeded and public capabilities report the same commit. See `submission/evidence/release-verification.json`. Public prototype: [qwitness.vercel.app](https://qwitness.vercel.app). Public browser integrity verification works; live receipt creation does not work yet.

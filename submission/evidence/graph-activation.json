@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-09-13T01:21:56.382594+00:00",
+  "keyCreated": true,
+  "studioStatus": "ACTIVE",
+  "plan": "Free",
+  "individualSpendingCap": null,
+  "capOmissionExplicitlyApproved": true,
+  "allowedSubgraph": "Cd2gEDVeqnjBn1hSeqFMitw8Q1iiyV9FYUZkLNRcL87g",
+  "localSecretSaved": true,
+  "localMode": "0600",
+  "freshClipboardMatchesStoredKey": true,
+  "productionSecretConfigured": true,
+  "deployment": "https://qwitness-i9ruank6o-doraking.vercel.app",
+  "productionCommit": "4ed5cc963d8984b58f8c0269ccdf846f2cc5090c",
+  "localGraphResult": "auth error: API key not found",
+  "publicReceiptStatus": 503,
+  "publicReceiptError": "The Graph rejected the supported metadata query.",
+  "successfulLiveQuery": false,
+  "submitted": false
+}

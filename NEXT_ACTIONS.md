@@ -1,5 +1,11 @@
 # Next actions
 
+## Latest update — 2026-09-13T01:21:56.382594+00:00
+
+The participant authorized API-key creation and Free-plan setup without an individual spending cap after the UI rejected zero. The key is saved locally with mode 0600, restricted to the intended subgraph, and configured as a sensitive production-only Vercel variable. A fresh clipboard copy matched the local secret exactly. The new production deployment serves commit `4ed5cc963d8984b58f8c0269ccdf846f2cc5090c`.
+
+Live acquisition remains blocked: local gateway requests return `auth error: API key not found`; production receipt creation returns HTTP 503. Configured credentials are not proof of successful integration. See `submission/evidence/graph-activation.json`. The Graph prize requirements remain unmet. No successful live query, participant narration or final submission is claimed. The participant requested prioritizing submission with 11% of Codex weekly usage remaining.
+
 Updated September 13, 2026, 00:24 UTC. Public prototype, GitHub linkage, dashboard details/technical text and draft image save are complete; do not repeat that setup.
 
 1. Obtain the authorized Graph key through this project's `.env.local` or deployment secrets, never chat. Configure provider limits, run `npm run test:live`, inspect actual schema/metadata and save successful query evidence. A configured key or fixture alone is insufficient.
